@@ -1,2 +1,2 @@
 # nosilenceband.github.io
-Website of No Silence Band
+Site officiel du groupe *No Silence*
