@@ -1,0 +1,12 @@
+.titre-de-fou-malade-jtebox {
+    background-color: rgba(255, 255, 255, 0); /* Fond transparent */
+    border: 5px solid #ffffff; /* Bordure blanche */
+    height: auto;
+    padding: 20px; /* Ajout d'un peu d'espace autour du texte */
+    width: 350px;
+    border-radius: 15px; /* Coins arrondis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centrer le texte dans la boîte */
+}

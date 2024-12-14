@@ -6,9 +6,11 @@
     <meta name="description" content="Site officiel du groupe de musique No Silence">
     <meta name="keywords" content="musique, groupe, concerts, No Silence">
     <meta name="author" content="No Silence">
+    <link rel="shortcut icon" href="assets/img/fav.png" type="image/x-icon">
     <title>No Silence - Groupe de Musique</title>
 
     <link rel="stylesheet" href="assets/css/background.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -42,7 +44,7 @@
     </nav>
 
     <header class="h-screen flex items-center justify-center bg-cover bg-center gradient-bg">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-light-green text-center shadow-lg px-4">No Silence</h1>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-light-green text-center shadow-lg px-4 ">No Silence</h1>
     </header>
 
     <main class="container mx-auto px-4 py-16">
@@ -105,7 +107,7 @@
                 </div>
                 <div class="relative group hover-grow">
                     <img src="assets/img/rayan.jpg" alt="Membre 7" class="rounded-lg shadow-lg w-full">
-                    <h3 class="text-lg sm:text-xl font-bold mt-2 text-center text-light-green">Rayan</h3>
+                    <h3 class="text-lg sm:text-xl font-bold mt-2 text-center text-light-green">Rayane</h3>
                     <div class="absolute inset-0 bg-dark-green bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                         <p class="text-xs sm:text-sm text-center px-2 sm:px-4">Violoniste classique, Léa fusionne la musique classique et moderne avec brio.</p>
                     </div>
@@ -121,7 +123,7 @@
                     <img src="assets/img/nans.jpg" alt="Membre 9" class="rounded-lg shadow-lg w-full">
                     <h3 class="text-lg sm:text-xl font-bold mt-2 text-center text-light-green">Nans</h3>
                     <div class="absolute inset-0 bg-dark-green bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                        <p class="text-xs sm:text-sm text-center px-2 sm:px-4">😍😍😍</p>
+                        <p class="text-xs sm:text-sm text-center px-2 sm:px-4">😍😍😍 (jtm)</p>
                     </div>
                 </div>
                 <div class="relative group hover-grow">
@@ -171,64 +173,13 @@
 
     <footer class="bg-dark-green py-4 mt-16">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2023 No Silence. Tous droits réservés. Make with 💖 by Antho</p>
+            <p>&copy; 2024 No Silence. Tous droits réservés. Make with 💖 by <a href="https://www.instagram.com/anthony.czzl/" style="color: cyan;">Antho</a></p>
         </div>
     </footer>
 
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/load-concert.js"></script>
 </body>
 </html>
-
-<script>
-    function formaterDate(dateStr) {
-        const months = [
-            "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-            "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
-        ];
-        
-        const date = new Date(dateStr);
-        const day = date.getDate();
-        const month = months[date.getMonth()];
-        const year = date.getFullYear();
-        
-        return `${day} ${month} ${year}`;
-    }
-
-    function chargerConcerts() {
-        fetch('assets/json/concerts.json')
-            .then(response => response.json())
-            .then(concerts => {
-                const concertList = document.getElementById('concert-list');
-                
-                concertList.innerHTML = '';
-                
-                concerts.forEach(concert => {
-                    const concertElement = document.createElement('div');
-                    concertElement.classList.add('bg-dark-green', 'p-4', 'rounded-lg', 'hover:bg-opacity-75', 'transition-colors', 'duration-300');
-                    
-                    const concertDate = document.createElement('h3');
-                    concertDate.classList.add('text-xl', 'font-bold', 'text-light-green');
-                    
-                    const formattedDate = formaterDate(concert.date);
-                    
-                    concertDate.textContent = `${formattedDate} - ${concert.lieu}`;
-                    
-                    const concertTime = document.createElement('p');
-                    concertTime.textContent = `${concert.nom_salle} - ${concert.heure}`;
-                    
-                    concertElement.appendChild(concertDate);
-                    concertElement.appendChild(concertTime);
-                    
-                    concertList.appendChild(concertElement);
-                });
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement des concerts:', error);
-            });
-    }
-
-    // Appeler la fonction dès que la page est chargée
-    window.onload = chargerConcerts;
-</script>
