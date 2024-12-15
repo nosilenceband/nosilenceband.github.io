@@ -1,0 +1,28 @@
+# Ignorer le dossier node_modules
+node_modules/
+
+# Ignorer les fichiers de configuration de Tailwind et PostCSS
+tailwind.config.js
+postcss.config.js
+
+# Ignorer les fichiers de gestion de package
+package-lock.json
+package.json
+
+# Ignorer les dossiers de build temporaires
+dist/
+build/
+
+# Ignorer les fichiers CSS sources (si tu utilises Tailwind compilé)
+assets/css/tailwind.css
+
+# Ignorer les fichiers log
+*.log
+
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db
+
+# Ignorer les fichiers personnels
+.env
+*.local
