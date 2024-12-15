@@ -17,8 +17,8 @@
 
     <title>No Silence - Groupe de Musique</title>
 
-    <link rel="stylesheet" href="assets/css/background.css">
-    <link href="./assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/background.css" media="print" onload="this.media='all';">
+    <link href="./assets/css/styles.css" rel="stylesheet" > <!-- Tailwind css build perso -->
     
     
 </head>
@@ -27,32 +27,32 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-between items-center py-4">
                 <a href="#" class="text-xl sm:text-2xl font-bold text-light-green">No Silence</a>
-                <button class="lg:hidden text-light-green" onclick="toggleMenu()">
+                <button class="lg:hidden text-light-green" aria-label="Ouvrir le menu" onclick="toggleMenu()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
-                <ul id="menu" class="hidden lg:flex lg:space-x-4 w-full lg:w-auto mt-4 lg:mt-0">
-                    <li><a href="#histoire" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300">Histoire</a></li>
-                    <li><a href="#membres" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300">Membres</a></li>
-                    <li><a href="#concerts" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300">Concerts</a></li>
-                    <li><a href="#contact" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300">Contact</a></li>
+                <ul id="menu" class="hidden lg:flex lg:space-x-4 w-full lg:w-auto mt-4 lg:mt-0" aria-label="Menu principal">
+                    <li><a href="#histoire" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300" aria-label="Aller à la section Histoire">Histoire</a></li>
+                    <li><a href="#membres" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300" aria-label="Aller à la section Membres">Membres</a></li>
+                    <li><a href="#concerts" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300" aria-label="Aller à la section Concerts">Concerts</a></li>
+                    <li><a href="#contact" class="block py-2 px-4 hover:bg-dark-green lg:hover:bg-transparent lg:hover:text-light-green lg:p-0 transition-colors duration-300" aria-label="Aller à la section Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="h-screen flex items-center justify-center bg-cover bg-center gradient-bg">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-light-green text-center shadow-lg px-4 ">No Silence</h1>
+    <header class="h-screen flex items-center justify-center bg-cover bg-center gradient-bg" aria-label="En-tête du site">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-light-green text-center shadow-lg px-4">No Silence</h1>
     </header>
 
     <main class="container mx-auto px-4 py-16">
-        <section id="histoire" class="mb-16 fade-in">
+        <section id="histoire" class="mb-16 fade-in" aria-labelledby="section-histoire">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <h2 class="text-4xl font-bold mb-4 text-light-green">Notre Histoire</h2>
                     <p class="text-lg">No Silence est un groupe de rock aux influences groovy composé de huit membres, tous lycéens au lycée Pierre Mendès France de Vitrolles. Formé le 16 Octobre 2024, ils ont déjà pu participer à des évènements musicaux dans un cadre scolaire comme dans un cadre moins scolaire. Encore amateurs, ils souhaitent se professionnaliser pour pouvoir toucher une plus grande audience et pouvoir gagner en liberté et être indépendant.</p>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="assets/img/banner.jpg" alt="No Silence en concert" class="rounded-lg shadow-lg hover-grow">
+                    <img src="assets/img/banner.jpg" alt="No Silence en concert" class="rounded-lg shadow-lg hover-grow" aria-label="Image du groupe en concert">
                 </div>
             </div>
         </section>
